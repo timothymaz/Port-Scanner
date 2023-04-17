@@ -1,86 +1,36 @@
-# Forest theme for ttk
+# User-friendly Port Scanner
 
-#### Partially based on my [Azure theme](https://github.com/rdbende/Azure-ttk-theme)
-
-![image](Forest-light%20screenshot.png)
-![image](Forest-dark%20screenshot.png)
+A simple and effective port scanner built using Python and Tkinter. This tool allows users to scan a range of IP addresses and ports to check their status (open or closed) with ease. It also supports hostname resolution and adjustable thread limits for optimized scanning.
 
 
-## How to use
-### Python / tkinter
-To use the theme just import the **forest-light.tcl**, or the **forest-dark.tcl** file, and call the `theme_use` method to set the theme:
-```python
-# Import the tcl file
-root.tk.call('source', 'forest-light.tcl / forest-dark.tcl')
+## Features
 
-# Set the theme with the theme_use method
-ttk.Style().theme_use('forest-light / forest-dark')
-```
+    User-friendly interface with Tkinter
+    Adjustable range of IP addresses and ports
+    Multi-threaded scanning for faster results
+    Hostname resolution option
+    Real-time live log updates and progress bar
 
-### Tcl / tk
-To use the theme just import the **forest-light.tcl**, or the **forest-dark.tcl** file, and call the `theme use` method to set the theme:
-```tcl
-# Import the tcl file
-source "forest-light.tcl / forest-dark.tcl"
+## Installation
 
-# Set theme using the theme use method
-ttk::style theme use forest-light / forest-dark
-```
+    Make sure you have Python 3.x installed on your system. You can download it from the official website.
+    Clone this repository or download the source code as a zip file and extract it.
+    Install the required packages by running pip install -r requirements.txt in your command prompt or terminal.
+    Run the script port_scanner.py to start the application.
 
-## New style elements
-The Forest theme similar to my [Azure theme](https://github.com/rdbende/Azure-ttk-theme) has some **new** widget styles, such as an accent button, toggle switch, toggle button and card. You can apply these with the style option.
+## Usage
 
-If you need a highlighted button, use `Accent.TButton`:
-```python
-button = ttk.Button(root, text='Accent button', style='Accent.TButton', command=callback)
-```
+    Enter the start and end IP addresses for the range you'd like to scan.
+    Enter the ports you'd like to scan, separated by commas.
+    Adjust the maximum number of threads for the scan (1-100).
+    Optionally, enable hostname resolution by checking the "Hostname Resolution" box.
+    Click "Start Scan" to begin the port scanning process.
+    Monitor the live logs for updates during the scan.
+    Review the results in the output text box after the scan is completed.
 
-To create a toggle button you need a checkbutton, to which you can apply the `ToggleButton` style:
-```python
-togglebutton = ttk.Checkbutton(root, text='Toggle button', style='ToggleButton', variable=var)
-```
+## Contributing
 
-The use of switches is becoming more common these days, so this theme has a `Switch` style, that can be applied to checkbuttons:
-```python
-switch = ttk.Checkbutton(root, text='Switch', style='Switch', variable=var)
-```
+Contributions are welcome! If you'd like to contribute, feel free to fork the repository and create a pull request with your changes. Please ensure your code follows best practices and is well-documented.
+## License
 
-If you only want a border around your widgets, not an entire LabelFrame then apply the `Card` style to a Frame:
-```python
-card = ttk.Frame(root, style='Card', padding=(5, 6, 7, 8))
-```
-
-## A short example
-for Python...
-```python
-import tkinter as tk
-from tkinter import ttk
-
-root = tk.Tk()
-
-# Import the tcl file
-root.tk.call('source', 'forest-dark.tcl')
-
-# Set the theme with the theme_use method
-ttk.Style().theme_use('forest-dark')
-
-# A themed (ttk) button
-button = ttk.Button(root, text="I'm a themed button")
-button.pack(pady=20)
-
-root.mainloop()
-```
-...and for Tcl
-```tcl
-package require Tk 8.6
-
-# Import the tcl file
-source "forest-dark.tcl"
-
-# Set theme using the theme use method
-ttk::style theme use forest-dark
-
-# A themed (ttk) button
-ttk::button .button -text "I'm a themed button"
-pack .button -pady 20
-```
+This project is licensed under the MIT License. See the LICENSE file for more information.
